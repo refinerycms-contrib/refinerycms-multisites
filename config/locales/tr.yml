@@ -1,0 +1,27 @@
+tr:
+  refinery:
+    plugins:
+      multisites:
+        title: Multisites
+    multisites:
+      admin:
+        multisites:
+          actions:
+            create_new: Yeni Ekle Multisite
+            reorder: Tekrar sirala Multisites
+            reorder_done: Tekrar siralama tamamlandiMultisites
+          records:
+            title: Multisites
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Multisites yok henuz.  Tikla "Yeni Ekle Multisite" eklemek senin ilk multisite.
+          multisite:
+            view_live_html: Bunu canlu multisite goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle multisite
+            delete: Bunu Sil multisite sonsuza dek
+      multisites:
+        show:
+          other: Diger Multisites
+  activerecord:
+    attributes:
+      'refinery/multisites/multisite':
+        test: Test

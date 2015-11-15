@@ -1,0 +1,29 @@
+zh-CN:
+  refinery:
+    plugins:
+      multisites:
+        title: Multisites
+    multisites:
+      admin:
+        multisites:
+          actions:
+            create_new: 建立新的 Multisite
+            reorder: 对 Multisites 重新排序
+            reorder_done: 对 Multisites 的重新排序结束
+          records:
+            title: Multisites
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Multisites yet. Click "Add New Multisite" to add your first multisite.
+            no_items_yet: 目前没有 Multisites . 点击 "Add New Multisite" 创建一个multisite.
+          multisite:
+            view_live_html: 查看 multisite 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 multisite
+            delete: 永久删除 multisite
+      multisites:
+        show:
+          other: 其他 Multisites
+  activerecord:
+    attributes:
+      'refinery/multisites/multisite':
+        test: Test

@@ -1,0 +1,27 @@
+cs:
+  refinery:
+    plugins:
+      multisites:
+        title: Multisites
+    multisites:
+      admin:
+        multisites:
+          actions:
+            create_new: Přidat Multisite
+            reorder: Řadit Multisites
+            reorder_done: Konec řazení Multisites
+          records:
+            title: Multisites
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Multisites. Zvolte "Přidat Multisite" pro přidání prvního multisite.
+          multisite:
+            view_live_html: Zobrazit náhled multisite<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit multisite
+            delete: Smazat multisite
+      multisites:
+        show:
+          other: Další Multisites
+  activerecord:
+    attributes:
+      'refinery/multisites/multisite':
+        test: Test

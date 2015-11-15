@@ -1,0 +1,27 @@
+nl:
+  refinery:
+    plugins:
+      multisites:
+        title: Multisites
+    multisites:
+      admin:
+        multisites:
+          actions:
+            create_new: Nieuwe Multisite toevoegen
+            reorder: De volgorde van de Multisites wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Multisite-volgorde
+          records:
+            title: Multisites
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Multisites. Druk op 'Nieuwe Multisite toevoegen' om de eerste toe te voegen.
+          multisite:
+            view_live_html: Deze multisite op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze multisite
+            delete: Deze multisite definitief verwijderen
+      multisites:
+        show:
+          other: Andere Multisites
+  activerecord:
+    attributes:
+      'refinery/multisites/multisite':
+        test: Test

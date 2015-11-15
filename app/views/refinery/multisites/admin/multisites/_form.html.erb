@@ -1,0 +1,15 @@
+<%= form_for [refinery, :multisites_admin, @multisite] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @multisite,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :test -%>
+    <%= f.text_field :test, :class => 'larger widest' -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.multisites.admin.multisites.multisite'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @multisite.test) -%>
+<% end -%>

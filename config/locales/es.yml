@@ -1,0 +1,28 @@
+es:
+  refinery:
+    plugins:
+      multisites:
+        title: Multisites
+#        article: masculino/femenino
+    multisites:
+      admin:
+        multisites:
+          actions:
+            create_new: Crear nuevo multisite
+            reorder: Reordenar multisites
+            reorder_done: Reordenación de multisites completada
+          records:
+            title: Multisites
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay multisites todavía. Pulsa en "Crear nuevo Multisite" para crear tu primer multisite.
+          multisite:
+            view_live_html: Ver este multisite como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este multisite
+            delete: Borrar este multisite para siempre
+      multisites:
+        show:
+          other: Otros multisites
+  activerecord:
+    attributes:
+      'refinery/multisites/multisite':
+        test: Test

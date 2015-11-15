@@ -1,0 +1,27 @@
+fr:
+  refinery:
+    plugins:
+      multisites:
+        title: Multisites
+    multisites:
+      admin:
+        multisites:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Multisite
+            reorder: Réordonner les Multisites
+            reorder_done: Fin de réordonnancement des Multisites
+          records:
+            title: Multisites
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Multisite. Cliquer sur "Créer un(e) nouve(au/l/lle) Multisite" pour créer votre premi(er/ère) multisite.'
+          multisite:
+            view_live_html: Voir ce(t/tte) multisite <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) multisite
+            delete: Supprimer définitivement ce(t/tte) multisite
+      multisites:
+        show:
+          other: Autres Multisites
+  activerecord:
+    attributes:
+      'refinery/multisites/multisite':
+        test: Test

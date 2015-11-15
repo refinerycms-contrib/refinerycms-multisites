@@ -1,0 +1,15 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(multisite) -%>">
+  <span class='title'>
+    <%= multisite.test %>
+
+  </span>
+  <span class='actions'>
+    
+      <%= action_icon(:preview, refinery.multisites_multisite_path(multisite), t('.view_live_html')) %>
+    
+    <%= action_icon(:edit,    refinery.edit_multisites_admin_multisite_path(multisite), t('.edit') ) %>
+    <%= action_icon(:delete,  refinery.multisites_admin_multisite_path(multisite), t('.delete'),
+      { class: "cancel confirm-delete",
+        data: {confirm: t('message',  scope: 'refinery.admin.delete', title: multisite.test)}}  ) %>
+  </span>
+</li>

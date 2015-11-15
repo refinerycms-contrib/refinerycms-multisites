@@ -1,0 +1,27 @@
+nb:
+  refinery:
+    plugins:
+      multisites:
+        title: Multisites
+    multisites:
+      admin:
+        multisites:
+          actions:
+            create_new: Lag en ny Multisite
+            reorder: Endre rekkefølgen på Multisites
+            reorder_done: Ferdig å endre rekkefølgen Multisites
+          records:
+            title: Multisites
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Multisites enda. Klikk på "Lag en ny Multisite" for å legge til din første multisite.
+          multisite:
+            view_live_html: Vis hvordan denne multisite ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne multisite
+            delete: Fjern denne multisite permanent
+      multisites:
+        show:
+          other: Andre Multisites
+  activerecord:
+    attributes:
+      'refinery/multisites/multisite':
+        test: Test

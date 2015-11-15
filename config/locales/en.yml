@@ -1,0 +1,27 @@
+en:
+  refinery:
+    plugins:
+      multisites:
+        title: Multisites
+    multisites:
+      admin:
+        multisites:
+          actions:
+            create_new: Add New Multisite
+            reorder: Reorder Multisites
+            reorder_done: Done Reordering Multisites
+          records:
+            title: Multisites
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Multisites yet. Click "Add New Multisite" to add your first multisite.
+          multisite:
+            view_live_html: View this multisite live <br/><em>(opens in a new window)</em>
+            edit: Edit this multisite
+            delete: Remove this multisite forever
+      multisites:
+        show:
+          other: Other Multisites
+  activerecord:
+    attributes:
+      'refinery/multisites/multisite':
+        test: Test
