@@ -11,8 +11,11 @@ module Refinery
           plugin.name = "multisites"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.multisites_admin_multisites_path }
           plugin.pathname = root
-          
         end
+      end
+
+      config.before_configuration do
+        require 'refinery/multisites/initialiser'
       end
 
       config.after_initialize do

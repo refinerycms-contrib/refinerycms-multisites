@@ -2,8 +2,8 @@ module Refinery
   module Multisites
 	  include ActiveSupport::Configurable
 
-	  config_accessor :todo
+	  config_accessor :tld_length
 
-	  self.todo = false
+	  self.tld_length = 1
 	end
 end
