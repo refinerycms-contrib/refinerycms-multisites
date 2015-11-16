@@ -4,9 +4,9 @@ Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = 'refinerycms-multisites'
   s.version           = '1.0'
-  s.description       = %q{Apartment based authentication extension for Refinery CMS}
+  s.description       = %q{Apartment based multisites extension for Refinery CMS}
   s.date              = '2015-11-14'
-  s.summary           = %q{An Apartment based authentication extension for Refinery CMS}
+  s.summary           = %q{An Apartment based multisites extension for Refinery CMS}
   s.homepage          = %q{http://www.brice-sanchez.com}
   s.authors           = ['Brice Sanchez']
   s.license           = %q{MIT}
