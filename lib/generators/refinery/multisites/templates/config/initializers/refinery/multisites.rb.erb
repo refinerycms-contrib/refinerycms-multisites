@@ -1,4 +1,7 @@
 Refinery::Multisites.configure do |config|
   # Level domain config. 1 for something like sitename.domain.com, 2 for sitename.sub.domain.com
   config.tld_length = <%= Refinery::Multisites.tld_length.inspect %>
+
+  # Restricted subdomains where multi tenant will not apply
+  config.restricted_subdomains = <%= Refinery::Multisites.restricted_subdomains.inspect %>
 end
