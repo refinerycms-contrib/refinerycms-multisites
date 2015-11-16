@@ -1,4 +1,5 @@
 require 'refinerycms-core'
+require 'refinerycms-authentication-devise'
 require 'apartment'
 
 module Refinery

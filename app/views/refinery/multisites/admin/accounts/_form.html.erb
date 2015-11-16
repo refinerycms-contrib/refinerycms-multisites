@@ -1,0 +1,15 @@
+<%= form_for [refinery, :multisites_admin_multisites, @account] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @account,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :subdomain -%>
+    <%= f.text_field :subdomain, :class => 'larger widest' -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.multisites.admin.multisites.account'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @account.subdomain) -%>
+<% end -%>

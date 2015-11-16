@@ -3,6 +3,7 @@ module Refinery
     class Account < Refinery::Core::BaseModel
       self.table_name = 'refinery_multisites_accounts'
 
+      acts_as_indexed :fields => [:subdomain]
 
 		  before_validation :downcase_subdomain
 

@@ -1,0 +1,20 @@
+<ul>
+  <% if ::Refinery::Multisites::Admin::AccountsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.multisites_admin_multisites_accounts_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= action_label :add, refinery.new_multisites_admin_multisites_account_path, t('.create_new') %>
+  </li>
+<% if !searching? && ::Refinery::Multisites::Admin::AccountsController.sortable? && ::Refinery::Multisites::Account.many? %>
+  <li>
+    <%= action_label :reorder,
+                     refinery.multisites_admin_multisites_accounts_path,
+                     t('.reorder', what:  "Accounts"), id: 'reorder_action'%>
+    <%= action_label :reorder_done,
+                     refinery.multisites_admin_multisites_accounts_path,
+                      t('.reorder_done', what: "Accounts"), id: 'reorder_action_done', class: 'hidden'%>
+  </li>
+<% end %>
+</ul>

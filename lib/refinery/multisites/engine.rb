@@ -9,7 +9,7 @@ module Refinery
       before_inclusion do
         Refinery::Plugin.register do |plugin|
           plugin.name = "multisites"
-          plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.multisites_admin_multisites_path }
+          plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.multisites_admin_multisites_accounts_path }
           plugin.pathname = root
         end
       end

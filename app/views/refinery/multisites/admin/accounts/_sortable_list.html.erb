@@ -1,5 +1,5 @@
 <ul id='sortable_list'>
-  <%= render :partial => 'multisite', :collection => @multisites %>
+  <%= render :partial => 'account', :collection => @accounts %>
 </ul>
 <%= render '/refinery/admin/sortable_list',
             :continue_reordering => (local_assigns.keys.include?(:continue_reordering)) ? continue_reordering : true %>
