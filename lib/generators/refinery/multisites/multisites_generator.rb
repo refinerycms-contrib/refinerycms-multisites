@@ -3,7 +3,7 @@ module Refinery
 
     source_root File.expand_path("../templates", __FILE__)
 
-    def generate_portfolio_initializer
+    def generate_multisites_initializer
       template "config/initializers/refinery/multisites.rb.erb", File.join(destination_root, "config", "initializers", "refinery", "multisites.rb")
     end
 

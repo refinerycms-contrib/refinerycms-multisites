@@ -3,7 +3,7 @@ require 'refinerycms-authentication-devise'
 require 'apartment'
 
 module Refinery
-  autoload :MultisitesGenerator, 'generators/refinery/multisites_generator'
+  autoload :MultisitesGenerator, 'generators/refinery/multisites/multisites_generator'
 
   module Multisites
     require 'refinery/multisites/engine'
