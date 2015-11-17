@@ -31,7 +31,7 @@ module RefineryMultisitesActionControllerBaseDecoration
   end
 
   def load_schema
-    Apartment::Tenant.switch!("test123")
+    Apartment::Tenant.switch!("public")
     return unless request.subdomain.present?
 
     if current_account
