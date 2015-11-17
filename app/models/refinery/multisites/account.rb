@@ -1,9 +1,9 @@
+require 'acts_as_indexed'
+
 module Refinery
   module Multisites
     class Account < Refinery::Core::BaseModel
       self.table_name = 'refinery_multisites_accounts'
-
-      acts_as_indexed :fields => [:subdomain]
 
 		  before_validation :downcase_subdomain
 
@@ -21,9 +21,9 @@ module Refinery
 		                          message: :restricted
 		                        }
 
-		  belongs_to :owner, class_name: "User"
+		  belongs_to :owner, class_name: "Refinery::Authentication::Devise::User"
 
-		  has_many :users, inverse_of: :organization
+      acts_as_indexed :fields => [:subdomain]
 
 		  private
 

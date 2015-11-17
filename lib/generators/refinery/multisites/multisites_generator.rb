@@ -7,6 +7,10 @@ module Refinery
       template "config/initializers/refinery/multisites.rb.erb", File.join(destination_root, "config", "initializers", "refinery", "multisites.rb")
     end
 
+     def generate_apartment_initializer
+      template "config/initializers/apartment.rb", File.join(destination_root, "config", "initializers", "apartment.rb")
+    end
+
     def rake_db
       rake "refinery_multisites:install:migrations"
     end

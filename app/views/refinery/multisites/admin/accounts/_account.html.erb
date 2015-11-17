@@ -3,8 +3,8 @@
     <%= account.subdomain %>
   </span>
   <span class='actions'>
-    <%= action_icon(:edit,    refinery.edit_multisites_admin_multisites_account_path(account), t('.edit') ) %>
-    <%= action_icon(:delete,  refinery.multisites_admin_multisites_account_path(account), t('.delete'),
+    <%= action_icon(:edit,    refinery.edit_multisites_admin_account_path(account), t('.edit') ) %>
+    <%= action_icon(:delete,  refinery.multisites_admin_account_path(account), t('.delete'),
       { class: "cancel confirm-delete",
         data: {confirm: t('message',  scope: 'refinery.admin.delete', title: account.subdomain)}}  ) %>
   </span>

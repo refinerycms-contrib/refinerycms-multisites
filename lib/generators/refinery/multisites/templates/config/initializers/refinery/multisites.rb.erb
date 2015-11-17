@@ -1,7 +1,10 @@
 Refinery::Multisites.configure do |config|
+  # Single tenant mode
+  config.single_tenant_mode = <%= Refinery::Multisites.single_tenant_mode.inspect %>
+
   # Level domain config. 1 for something like sitename.domain.com, 2 for sitename.sub.domain.com
   config.tld_length = <%= Refinery::Multisites.tld_length.inspect %>
 
-  # Restricted subdomains where multi tenant will not apply
+  # Restricted subdomains who can not be used for multitenancy
   config.restricted_subdomains = <%= Refinery::Multisites.restricted_subdomains.inspect %>
 end
