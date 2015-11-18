@@ -2,6 +2,16 @@
 
 [WORK IN PROGRESS] Multisites extension for [Refinery CMS](http://refinerycms.com).
 
+## TODO
+
+* Refactor the account form to use the refinery register form,
+* Add ability to destroy an account in user admin form,
+* Add ability to list assets/views by accounts,
+* Add ability to switch on domain,
+* Add locales,
+* Testing.
+
+
 ## Requirements
 
 Refinery CMS version 3.0.0 or above.
@@ -22,11 +32,55 @@ Next, to install the multisites plugin run:
 
 Run database migrations:
 
-    $ bundle exec rake  db:migrate
+    $ bundle exec rake db:migrate
 
 Finally seed your database and you're done.
 
-    $ bundle exec rake  db:seed
+    $ bundle exec rake db:seed
+
+
+## Usage
+
+Temporaly set the app in single tenant mode:
+
+	# config/initializer/refinery/multisites.rb
+	Refinery::Multisites.configure do |config|
+	[...]
+		config.single_tenant_mode = true
+	[...]
+	end
+
+Start the server with ``lvh.me``:
+
+	rails s -p 3000 -b lvh.me
+
+Register your first user in the public app:
+
+	http://lvh.me:3000/refinery/users/register
+
+Create a new subdomain:
+
+	http://lvh.me:3000/refinery/multisites/accounts/new
+
+Kill the server
+
+Set the app in multi tenant mode:
+
+	# config/initializer/refinery/multisites.rb
+	Refinery::Multisites.configure do |config|
+	[...]
+		config.single_tenant_mode = false
+	[...]
+	end
+
+Restart the server ``lvh.me``:
+
+	rails s -p 3000 -b lvh.me
+
+Go to your new subdomain:
+
+	http://newsubdomain.lvh.me:3000/
+
 
 ## Developing & Contributing
 
