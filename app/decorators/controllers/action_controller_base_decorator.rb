@@ -23,7 +23,7 @@ module RefineryMultisitesActionControllerBaseDecoration
   end
 
   def current_user_owner?
-    current_account.owner == current_user unless Refinery::Multisites.single_tenant_mode?
+    current_account.owner == current_refinery_user unless Refinery::Multisites.single_tenant_mode?
   end
 
   def current_account
@@ -31,13 +31,14 @@ module RefineryMultisitesActionControllerBaseDecoration
   end
 
   def load_schema
-    Apartment::Tenant.switch!("public")
-    return unless request.subdomain.present?
-
-    if current_account
-      Apartment::Tenant.switch!(request.subdomain)
+    if request.subdomain.present?
+      if current_account
+        Apartment::Tenant.switch!(request.subdomain)
+      else
+        redirect_to root_url(subdomain: false)
+      end
     else
-      redirect_to root_url(subdomain: false)
+      Apartment::Tenant.switch!("public")
     end
   end
 end
