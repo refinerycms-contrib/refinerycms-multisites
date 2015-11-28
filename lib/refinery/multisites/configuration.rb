@@ -2,8 +2,7 @@ module Refinery
   module Multisites
 	  include ActiveSupport::Configurable
 
-	  config_accessor :single_tenant_mode,
-	  				  :tld_length, :restricted_subdomains
+	  config_accessor :single_tenant_mode, :tld_length, :restricted_subdomains
 
 	  self.single_tenant_mode = false
 
