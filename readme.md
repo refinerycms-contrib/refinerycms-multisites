@@ -1,15 +1,17 @@
 # Refinery CMS Multisites
 
+[![Build Status](https://travis-ci.org/refinerycms-contrib/refinerycms-multisites.svg?branch=master)](https://travis-ci.org/refinerycms-contrib/refinerycms-multisites)
+
 [WORK IN PROGRESS] Multisites extension for [Refinery CMS](http://refinerycms.com).
 
 ## TODO
 
-* Refactor the account form to use the refinery register form,
-* Add ability to destroy an account in user admin form,
-* Add ability to list assets/views by accounts,
-* Add ability to switch on domain,
-* Add locales,
-* Testing.
+* [ ] Refactor the account form to use the refinery register form,
+* [ ] Add ability to destroy an account in user admin form,
+* [ ] Add ability to list assets/views by accounts,
+* [ ] Add ability to switch on domain,
+* [ ] Add locales,
+* [ ] Testing.
 
 
 ## Requirements
@@ -21,7 +23,7 @@ Refinery CMS version 3.0.0 or above.
 Open up your ``Gemfile`` and add at the bottom this line:
 
 ```ruby
-gem 'refinerycms-multisites', github: 'refinery/refinerycms-multisites', branch: 'master'
+gem 'refinerycms-multisites', git: 'https://github.com/refinery/refinerycms-multisites', branch: 'master'
 ```
 
 Now run `bundle install` and once bundler has installed the gem run:
