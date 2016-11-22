@@ -3,14 +3,16 @@
               :object => @account,
               :include_object_name => true %>
 
-  <div class='field'>
-    <span class='label_with_help'>
-      <%= f.label :owner_id, t('.owner') %>
-      <%= refinery_help_tag t('.owner_help') %>
-      <br/>
-      <%= f.collection_select :owner_id, @users, :id, :username %>
-    </span>
-  </div>
+  <% if @users.present? %>
+    <div class='field'>
+      <span class='label_with_help'>
+        <%= f.label :owner_id, t('.owner') %>
+        <%= refinery_help_tag t('.owner_help') %>
+        <br/>
+        <%= f.collection_select :owner_id, @users, :id, :username %>
+      </span>
+    </div>
+  <% end %>
 
   <div class='field'>
     <%= f.label :subdomain -%>

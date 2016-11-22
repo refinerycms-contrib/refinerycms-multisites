@@ -4,10 +4,11 @@ module Refinery
       class AccountsController < ::Refinery::AdminController
 
         crudify :'refinery/multisites/account',
-                :title_attribute => 'subdomain'
+                title_attribute: :subdomain,
+                order: :subdomain,
+                sortable: false
 
-        before_action :find_all_users,
-                      :only => [:new, :edit, :create, :update]
+        before_action :find_all_users, only: [:new, :edit, :create, :update]
 
         def new
           @account = Refinery::Multisites::Account.new
@@ -43,7 +44,7 @@ module Refinery
         protected
 
         def find_all_users
-          @users = Refinery::Authentication::Devise::User.all
+          @users = Refinery::Multisites.user_class.all if !Refinery::Multisites.user_class.nil?
         end
       end
     end

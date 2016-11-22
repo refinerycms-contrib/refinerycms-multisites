@@ -10,6 +10,10 @@ git 'https://github.com/refinery/refinerycms.git', branch: '3-0-stable' do
   end
 end
 
+group :development do
+  gem 'byebug'
+end
+
 # Database Configuration
 platforms :jruby do
   gem 'activerecord-jdbcsqlite3-adapter'

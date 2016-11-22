@@ -7,7 +7,7 @@ module Refinery
 
 		  before_validation :downcase_subdomain
 
-		  validates :owner, presence: true
+		  validates :owner, presence: true, if: :owner_required?
 		  validates :subdomain, presence: true,
 		                        uniqueness: { case_sensitive: false },
 		                        format:
@@ -21,9 +21,14 @@ module Refinery
 		                          message: :restricted
 		                        }
 
-		  belongs_to :owner, class_name: "Refinery::Authentication::Devise::User"
+      belongs_to :owner, proc { readonly(true) }, class_name: Refinery::Multisites.user_class.to_s, foreign_key: :user_id
 
       acts_as_indexed :fields => [:subdomain]
+
+      # Override this to disable required owner
+      def owner_required?
+        !Refinery::Multisites.user_class.nil?
+      end
 
 		  private
 

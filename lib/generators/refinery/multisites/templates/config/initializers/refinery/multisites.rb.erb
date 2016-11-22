@@ -7,4 +7,8 @@ Refinery::Multisites.configure do |config|
 
   # Restricted subdomains who can not be used for multitenancy
   config.restricted_subdomains = <%= Refinery::Multisites.restricted_subdomains.inspect %>
+
+  # If you're grafting onto an existing app, change this to your User class
+  # (eg: Refinery::Blog.user_class = "Refinery::Authentication::Devise::User" )
+  # Refinery::Multisites.user_class = <%= Refinery::Multisites.user_class.to_s.inspect %>
 end
