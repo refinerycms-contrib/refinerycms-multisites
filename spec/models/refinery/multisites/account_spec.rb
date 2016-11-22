@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Refinery
   module Multisites
-    describe Multisite do
+    describe Account do
       describe "validations", type: :model do
         subject do
           FactoryGirl.create(:multisite,

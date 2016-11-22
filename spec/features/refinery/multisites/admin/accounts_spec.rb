@@ -1,10 +1,10 @@
 # encoding: utf-8
 require "spec_helper"
 
-describe Refinery do
-  describe "Multisites" do
-    describe "Admin" do
-      describe "multisites", type: :feature do
+module Refinery
+  module Multisites
+    module Admin
+      describe Account, type: :feature do
         refinery_login
 
         describe "multisites list" do
