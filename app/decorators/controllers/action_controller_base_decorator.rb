@@ -1,6 +1,6 @@
 require 'refinery/multisites/configuration'
 
-module RefineryMultisitesActionControllerBaseDecoration
+module RefineryMultisitesActionControllerBaseDecorator
   extend ActiveSupport::Concern
 
   included do
@@ -43,4 +43,4 @@ module RefineryMultisitesActionControllerBaseDecoration
   end
 end
 
-ActionController::Base.send :prepend, RefineryMultisitesActionControllerBaseDecoration
+ActionController::Base.send :prepend, RefineryMultisitesActionControllerBaseDecorator
