@@ -11,6 +11,7 @@ module Refinery
           plugin.name = "multisites"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.multisites_admin_accounts_path }
           plugin.pathname = root
+          plugin.always_allow_access = false
         end
       end
 
