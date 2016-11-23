@@ -1,5 +1,5 @@
 begin
-  Refinery::Admin::PagesController.class_eval do
+  module RefineryAdminPagesControllerDecorator
     def account_layout_templates_pattern
       if Dir.exist?( Rails.root.join('accounts', current_account.subdomain) )
         ['accounts', current_account.subdomain, *Refinery::Pages.layout_templates_pattern]
@@ -24,5 +24,7 @@ begin
       Refinery::Pages.valid_templates(*account_view_templates_pattern)
     end
   end
+
+  Refinery::Admin::PagesController.send :prepend, RefineryAdminPagesControllerDecorator
 rescue NameError
 end
