@@ -7,7 +7,7 @@ module Refinery
 
 		  before_validation :downcase_subdomain
 
-		  validates :owner, presence: true, if: :owner_required?
+		  validates :owner_id, presence: true, if: :owner_required?
 		  validates :subdomain, presence: true,
 		                        uniqueness: { case_sensitive: false },
 		                        format:
@@ -22,6 +22,7 @@ module Refinery
 		                        }
 
       belongs_to :owner, proc { readonly(true) }, class_name: Refinery::Multisites.user_class.to_s, foreign_key: :user_id
+      has_many :users, inverse_of: :organization
 
       acts_as_indexed :fields => [:subdomain]
 
