@@ -3,21 +3,31 @@
               :object => @account,
               :include_object_name => true %>
 
+  <div class='field'>
+    <%= f.label :subdomain -%>
+    <%= f.text_field :subdomain, :class => 'larger widest' -%>
+  </div>
+
   <% if @users.present? %>
     <div class='field'>
       <span class='label_with_help'>
         <%= f.label :owner_id, t('.owner') %>
         <%= refinery_help_tag t('.owner_help') %>
         <br/>
-        <%= f.collection_select :owner_id, @users, :id, :username %>
+        <%= f.collection_select :owner_id, @users, :id, :username, { include_blank: t('.please_select_a_owner') } %>
+      </span>
+    </div>
+
+    <div class='field'>
+      <span class='label_with_help'>
+        <%= f.label :users, t('.users') %>
+        <%= refinery_help_tag t('.users') %>
+        <br/>
+        <%= f.collection_select :user_ids, @users, :id, :username, { selected: @account.user_ids }, { multiple: true } %>
       </span>
     </div>
   <% end %>
 
-  <div class='field'>
-    <%= f.label :subdomain -%>
-    <%= f.text_field :subdomain, :class => 'larger widest' -%>
-  </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,

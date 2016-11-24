@@ -44,7 +44,7 @@ module Refinery
 
         # Only allow a trusted parameter "white list" through.
         def account_params
-          params.require(:account).permit(:subdomain, :owner_id)
+          params.require(:account).permit(:subdomain, :owner_id, :user_ids => [])
         end
       end
     end
