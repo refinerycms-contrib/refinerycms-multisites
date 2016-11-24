@@ -16,7 +16,6 @@ module Refinery
       end
 
       config.to_prepare do
-        byebug
         Refinery::Multisites.attach! if defined?(Refinery::Authentication::Devise::User)
       end
 
