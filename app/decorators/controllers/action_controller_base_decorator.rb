@@ -35,7 +35,7 @@ module RefineryMultisitesActionControllerBaseDecorator
       if current_account
         Apartment::Tenant.switch!(request.subdomain)
       else
-        redirect_to root_url(subdomain: false)
+        redirect_to refinery.root_path(subdomain: false)
       end
     else
       Apartment::Tenant.switch!("public")
