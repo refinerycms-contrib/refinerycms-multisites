@@ -18,6 +18,13 @@ module Refinery
       def factory_paths
         @factory_paths ||= [ root.join('spec', 'factories').to_s ]
       end
+
+      def attach!
+        require 'refinery/authentication/devise/user'
+        require 'refinery/multisites/authorisation_manager_decorator'
+        
+        Refinery::Authentication::Devise::AuthorisationManager.send :prepend, RefineryAuthenticationDeviseAuthorisationManagerDecorator
+      end
     end
   end
 end

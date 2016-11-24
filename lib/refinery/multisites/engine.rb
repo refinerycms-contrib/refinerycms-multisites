@@ -15,6 +15,11 @@ module Refinery
         end
       end
 
+      config.to_prepare do
+        byebug
+        Refinery::Multisites.attach! if defined?(Refinery::Authentication::Devise::User)
+      end
+
       config.after_initialize do
         Refinery.register_extension(Refinery::Multisites)
       end
