@@ -21,8 +21,8 @@ module Refinery
 		                          message: :restricted
 		                        }
 
-      belongs_to :owner, proc { readonly(true) }, class_name: Refinery::Multisites.user_class.to_s, foreign_key: :user_id
-      has_many :users, inverse_of: :organization
+      belongs_to :owner, proc { readonly(true) }, class_name: Refinery::Multisites.user_class.to_s
+      has_many :users, class_name: Refinery::Multisites.user_class.to_s, inverse_of: :organization, foreign_key: :organization_id
 
       acts_as_indexed :fields => [:subdomain]
 
