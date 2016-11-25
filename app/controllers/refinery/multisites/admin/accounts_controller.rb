@@ -13,12 +13,9 @@ module Refinery
         def create
           @account = Refinery::Multisites::Account.new(account_params)
           if @account.valid?
-            if Apartment::Tenant.create(@account.subdomain)
-              @account.save
-              redirect_to refinery.multisites_admin_accounts_path
-            else
-              render action: "new"
-            end
+            Apartment::Tenant.create(@account.subdomain)
+            @account.save
+            redirect_to refinery.multisites_admin_accounts_path
           else
             render action: "new"
           end
@@ -29,9 +26,8 @@ module Refinery
         end
 
         def destroy
-          if Apartment::Tenant.drop(current_subdomain)
-            current_account.destroy
-          end
+          current_account.destroy
+          Apartment::Tenant.drop(current_subdomain)
         end
 
         protected
