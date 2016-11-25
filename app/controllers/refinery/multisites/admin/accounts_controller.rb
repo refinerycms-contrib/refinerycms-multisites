@@ -36,11 +36,16 @@ module Refinery
           @users = Refinery::Multisites.user_class.all if !Refinery::Multisites.user_class.nil?
         end
 
+        def account_params
+          params.require(:account).permit(permitted_account_params)
+        end
+
         private
 
-        # Only allow a trusted parameter "white list" through.
-        def account_params
-          params.require(:account).permit(:subdomain, :owner_id, :user_ids => [])
+        def permitted_account_params
+          [
+            :subdomain, :owner_id, :user_ids => []
+          ]
         end
       end
     end
