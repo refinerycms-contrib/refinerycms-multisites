@@ -4,8 +4,12 @@
               :include_object_name => true %>
 
   <div class='field'>
-    <%= f.label :subdomain -%>
-    <%= f.text_field :subdomain, :class => 'larger widest' -%>
+    <span class='label_with_help'>
+      <%= f.label :subdomain -%>
+      <%= refinery_help_tag t('.subdomain') %>
+      <br/>
+      <%= f.text_field :subdomain, :class => 'larger' -%>
+    </span>
   </div>
 
   <% if @users.present? %>
@@ -27,7 +31,6 @@
       </span>
     </div>
   <% end %>
-
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
