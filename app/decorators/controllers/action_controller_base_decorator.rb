@@ -26,16 +26,28 @@ module RefineryMultisitesActionControllerBaseDecorator
     current_account.owner == current_refinery_user unless Refinery::Multisites.single_tenant_mode?
   end
 
-  def current_account
-    @current_account ||= Refinery::Multisites::Account.find_by(subdomain: request.subdomain)
+  def current_account(subdomain = request.subdomain)
+    @current_account ||= Refinery::Multisites::Account.find_by(subdomain: subdomain)
   end
 
   def load_schema
-    if request.subdomain.present?
-      if current_account
-        Apartment::Tenant.switch!(request.subdomain)
+    subdomains = request.subdomains
+
+    if subdomains.present?
+      tenant = subdomains.first
+
+      if current_account(tenant)
+        Apartment::Tenant.switch!(tenant)
       else
-        redirect_to refinery.root_path(subdomain: false)
+        if Apartment.tld_length >= 2
+          if subdomains.many?
+            redirect_to refinery.root_path(subdomain: subdomains.last)
+          else
+            Apartment::Tenant.switch!("public")
+          end
+        else
+          redirect_to refinery.root_path(subdomain: false)
+        end
       end
     else
       Apartment::Tenant.switch!("public")
