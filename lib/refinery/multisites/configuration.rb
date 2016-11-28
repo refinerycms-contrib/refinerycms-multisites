@@ -1,15 +1,15 @@
 module Refinery
   module Multisites
-	  include ActiveSupport::Configurable
+    include ActiveSupport::Configurable
 
-	  config_accessor :single_tenant_mode, :restricted_subdomains
+    config_accessor :single_tenant_mode, :restricted_subdomains
 
-	  self.single_tenant_mode = false
-	  self.restricted_subdomains = %w(www admin)
+    self.single_tenant_mode = false
+    self.restricted_subdomains = %w(www admin)
 
     # User model isn't available when this line gets hit, so we use static methods instead
     @@user_class_name = nil
-	  class << self
+    class << self
       def single_tenant_mode?
         config.single_tenant_mode.present?
       end
@@ -34,5 +34,5 @@ module Refinery
       end
     end
 
-	end
+  end
 end
