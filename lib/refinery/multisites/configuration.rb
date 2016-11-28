@@ -2,10 +2,9 @@ module Refinery
   module Multisites
 	  include ActiveSupport::Configurable
 
-	  config_accessor :single_tenant_mode, :tld_length, :restricted_subdomains
+	  config_accessor :single_tenant_mode, :restricted_subdomains
 
 	  self.single_tenant_mode = false
-	  self.tld_length = 1
 	  self.restricted_subdomains = %w(www admin)
 
     # User model isn't available when this line gets hit, so we use static methods instead

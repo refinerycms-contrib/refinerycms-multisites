@@ -1,5 +1,5 @@
 Apartment.configure do |config|
-  config.tld_length = Refinery::Multisites.tld_length
+  config.tld_length = 1
   
   # If you're grafting onto an existing app, add your User class
   # config.excluded_models = %w( Refinery::Multisites::Account 
