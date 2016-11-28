@@ -6,7 +6,10 @@ module RefineryAuthenticationDeviseAuthorisationManagerDecorator
 
     unless adapter.current_user.has_role?(:superuser) ||
       ( adapter.current_user.has_role?(:refinery) && 
-        ( adapter.current_user.account == current_account || adapter.current_user.organization == current_account ) )
+        ( current_account.present? && 
+          ( adapter.current_user.account == current_account || adapter.current_user.organization == current_account )
+        )
+      )
       
       raise Zilch::Authorisation::NotAuthorisedException
     end
