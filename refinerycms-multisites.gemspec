@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   # Runtime dependencies
   s.add_dependency 'refinerycms-core', ['>= 3.0.0', '< 5.0']
   s.add_dependency 'acts_as_indexed', '~> 0.8.0'
-  s.add_dependency 'apartment', '~> 1.0.2'
+  s.add_dependency 'apartment', '>= 1.0.2', '< 2.3.0'
 
   s.required_ruby_version = '>= 2.0.0'
 end
