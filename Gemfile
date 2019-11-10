@@ -33,7 +33,7 @@ group :development, :test do
   platforms :ruby do
     require 'rbconfig'
     if RbConfig::CONFIG['target_os'] =~ /linux/i
-      gem 'therubyracer', '~> 0.11.4'
+      gem 'therubyracer', '~> 0.12.3'
     end
   end
 end
